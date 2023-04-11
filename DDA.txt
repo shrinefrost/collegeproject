@@ -1,0 +1,45 @@
+#include<graphics.h>
+int main()
+{
+    int gd=DETECT,gm,x0, x1, y0, y1;
+    initgraph(&gd,&gm,"");
+    
+    float x, y,dx,dy,steps;  
+  
+    printf("Enter the coordinate of Starting Point : ");
+	scanf("%d%d" , &x0 , &y0);
+	
+	printf("Enter the coordinate of Ending Point : ");
+	scanf("%d%d" , &x1 , &y1);
+	
+	int i = 1;
+	 
+    dx = (float)(x1 - x0);  
+    dy = (float)(y1 - y0);
+	  
+    if(dx>=dy)  
+    	{  
+        	steps = dx;  
+    	}  
+    else  
+        {  
+        	steps = dy;  
+    	}  
+    	
+    dx = dx/steps;  
+    dy = dy/steps;  
+    x = x0;  
+    y = y0;
+	  
+      
+    while(i<= steps)  
+    {  
+        putpixel(x, y, RED);  
+        x += dx;  
+        y += dy;  
+        i=i+1;  
+    } 
+		 
+    getch();  
+    closegraph();  
+} 
